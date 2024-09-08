@@ -17,6 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
+
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -103,7 +105,7 @@ class CarControllerTest {
         carRepository.save(testCar);
 
         var data = new CarUpdateDTO();
-        data.setManufacturer(JsonNullable.of("new manufacturer"));
+        data.setManufacturer(Optional.of("new manufacturer"));
 
         var request = put("/cars/{id}", testCar.getId())
                 .contentType(MediaType.APPLICATION_JSON)

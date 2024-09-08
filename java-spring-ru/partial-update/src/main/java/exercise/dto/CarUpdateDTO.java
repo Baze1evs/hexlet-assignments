@@ -6,12 +6,15 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Optional;
+
 // BEGIN
+@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 @Getter
 @Setter
 public class CarUpdateDTO {
-    private JsonNullable<String> manufacturer;
-    private JsonNullable<String> model;
-    private JsonNullable<Integer> enginePower;
+    private Optional<String> manufacturer;
+    private Optional<String> model;
+    private Optional<Integer> enginePower;
 }
 // END

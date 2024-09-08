@@ -1,7 +1,6 @@
 package exercise.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
@@ -13,7 +12,7 @@ import exercise.model.Car;
 
 // BEGIN
 @Mapper(
-        uses = {JsonNullableMapper.class},
+        uses = {NullableMapper.class},
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE
